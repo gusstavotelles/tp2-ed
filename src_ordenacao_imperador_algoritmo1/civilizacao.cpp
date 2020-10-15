@@ -1,10 +1,11 @@
-#include "./headers/Civilizacao.hpp"
+#include "./headers/civilizacao.hpp"
 #include <iostream>
 #include <string.h>
+#define MAX 20
 
 Civilizacao::Civilizacao() {}
 
-Civilizacao::Civilizacao(char n[15], int d, int p) {
+Civilizacao::Civilizacao(char n[MAX], int d, int p) {
     strcpy(this->nome, n);
     this->populacao = p;
     this->distancia = d;

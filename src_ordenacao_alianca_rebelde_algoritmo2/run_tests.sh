@@ -1,7 +1,7 @@
 EXEC=$1
 TMP_OUT=$2
 
-echo "Aliança Rebelde - Quick Sort"
+echo "ordenacao alianca rebelde algoritmo2 (quick sort)"
 
 for i in {0..9..1}; do
   start=`date +%s`

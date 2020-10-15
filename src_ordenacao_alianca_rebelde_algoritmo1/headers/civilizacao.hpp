@@ -8,7 +8,7 @@ class Civilizacao
 {
     public:
         Civilizacao();
-        Civilizacao(char n[15], int d, int p);
+        Civilizacao(char n[MAX], int d, int p);
         int GetDistancia();
         int GetPopulacao();
         void Imprime();

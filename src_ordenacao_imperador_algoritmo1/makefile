@@ -40,8 +40,8 @@ HEADERS_DIR = ./headers
 $(EXEC): main.cpp civilizacao.o
 	$(CC) $(CFLAGS) main.cpp civilizacao.o -o $(EXEC)
 
-civilizacao.o: ${HEADERS_DIR}/Civilizacao.hpp ./Civilizacao.cpp ./Bolha.cpp
-	$(CC) $(CFLAGS) -c ./Civilizacao.cpp -o civilizacao.o
+civilizacao.o: ${HEADERS_DIR}/civilizacao.hpp ./civilizacao.cpp ./Bolha.cpp
+	$(CC) $(CFLAGS) -c ./civilizacao.cpp -o civilizacao.o
  
 test: $(EXEC)
 	@bash run_tests.sh $(EXEC) $(TMPOUT)

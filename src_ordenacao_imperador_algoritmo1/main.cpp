@@ -1,9 +1,11 @@
 #include <cstdio> // em C substituir por #include <stdio.h>
 #include <iostream>
 #include <vector>
-#include "headers/Civilizacao.hpp" 
+#include "headers/civilizacao.hpp" 
 #include "Bolha.cpp"
 using namespace std;
+#define MAX 20
+
 
 int main() {
     int num_civilizacoes;
@@ -13,7 +15,7 @@ int main() {
     vector<Civilizacao>* civilizacoes = new vector<Civilizacao>;
     
     for(i=0; i < num_civilizacoes; i++){
-        char nome[15] = {};
+        char nome[MAX] = {};
         int distancia, populacao;
         scanf("%s %d %d", &nome[0], &distancia, &populacao);
         civilizacoes->push_back(Civilizacao(nome, distancia, populacao));
