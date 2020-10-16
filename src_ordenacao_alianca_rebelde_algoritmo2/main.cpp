@@ -8,25 +8,25 @@ using namespace std;
 
 int main()
 {
-    int num_civilizacoes;
-    scanf("%d", &num_civilizacoes);
+    int qtdCiv;
+    scanf("%d", &qtdCiv);
     int i, j;
 
-    vector<Civilizacao> *civilizacoes = new vector<Civilizacao>;
+    vector<Civilizacao> *civ = new vector<Civilizacao>;
 
-    for (i = 0; i < num_civilizacoes; i++)
+    for (i = 0; i < qtdCiv; i++)
     {
         char nome[MAX] = {};
-        int distancia, populacao;
-        scanf("%s %d %d", &nome[0], &distancia, &populacao);
-        civilizacoes->push_back(Civilizacao(nome, distancia, populacao));
+        int dist, pop;
+        scanf("%s %d %d", &nome[0], &dist, &pop);
+        civ->push_back(Civilizacao(nome, dist, pop));
     }
 
-    QuickSort(civilizacoes, num_civilizacoes);
+    QuickSort(civ, qtdCiv);
 
-    for (j = 0; j < num_civilizacoes; j++)
+    for (j = 0; j < qtdCiv; j++)
     {
-        civilizacoes->at(j).Imprime();
+        civ->at(j).Mostra();
     }
 
     return 0;

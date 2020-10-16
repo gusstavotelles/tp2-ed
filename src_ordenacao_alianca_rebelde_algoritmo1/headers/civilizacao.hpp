@@ -9,13 +9,13 @@ class Civilizacao
     public:
         Civilizacao();
         Civilizacao(char n[MAX], int d, int p);
-        int GetDistancia();
-        int GetPopulacao();
-        void Imprime();
+        int GetDist();
+        int GetPop();
+        void Mostra();
 
     private:
-        int distancia;
-        int populacao;
+        int dist;
+        int pop;
         char nome[MAX];
 };
 #endif

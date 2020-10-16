@@ -5,20 +5,24 @@
 
 Civilizacao::Civilizacao() {}
 
-Civilizacao::Civilizacao(char n[MAX], int d, int p) {
+Civilizacao::Civilizacao(char n[MAX], int d, int p)
+{
     strcpy(this->nome, n);
-    this->populacao = p;
-    this->distancia = d;
+    this->pop = p;
+    this->dist = d;
 }
 
-int Civilizacao::GetPopulacao() {
-    return this->populacao;
+int Civilizacao::GetPop()
+{
+    return this->pop;
 }
 
-int Civilizacao::GetDistancia() {
-    return this->distancia;
+int Civilizacao::GetDist()
+{
+    return this->dist;
 }
 
-void Civilizacao::Imprime() {
-    std::cout << this->nome << " " << this->distancia << " " << this->populacao << "\n"; 
+void Civilizacao::Mostra()
+{
+    std::cout << this->nome << " " << this->dist << " " << this->pop << "\n";
 }

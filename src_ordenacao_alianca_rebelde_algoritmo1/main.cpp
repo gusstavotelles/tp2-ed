@@ -1,29 +1,32 @@
-#include <cstdio> 
+#include <cstdio>
 #include <iostream>
 #include <vector>
-#include "headers/civilizacao.hpp" 
+#include "headers/civilizacao.hpp"
 #include "mergeSort.cpp"
 using namespace std;
 #define MAX 20
 
-int main() {
-    int num_civilizacoes;
-    scanf("%d",&num_civilizacoes);
-    int i, j;
+int main()
+{
+    int qtdCiv;
+    scanf("%d", &qtdCiv);
 
-    vector<Civilizacao>* civilizacoes = new vector<Civilizacao>;
-    
-    for(i=0; i < num_civilizacoes; i++){
+    vector<Civilizacao> *civ = new vector<Civilizacao>;
+
+    for (int i = 0; i < qtdCiv; i++)
+    {
         char nome[MAX] = {};
-        int distancia, populacao;
-        scanf("%s %d %d", &nome[0], &distancia, &populacao);
-        civilizacoes->push_back(Civilizacao(nome, distancia, populacao));
+        int dist, pop;
+
+        scanf("%s %d %d", &nome[0], &dist, &pop);
+        civ->push_back(Civilizacao(nome, dist, pop));
     }
 
-    MergeSort(civilizacoes);
+    MergeSort(civ);
 
-    for(j=0; j < num_civilizacoes; j++){
-        civilizacoes->at(j).Imprime();
+    for (int j = 0; j < qtdCiv; j++)
+    {
+        civ->at(j).Mostra();
     }
 
     return 0;

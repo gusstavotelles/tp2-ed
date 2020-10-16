@@ -11,9 +11,9 @@ for i in {0..9..1}; do
   runtime=$((end-start))
   if ! diff -qwB ../tests/$testname.out $TMP_OUT &>/dev/null; then
 
-    echo "Test $testname finish - Tempo de execução: $runtime (segundos) - Status: failed"
+    echo "Teste: $testname falhou (duração: $runtime segundos)"
   else
 
-    echo "Test $testname finish - Tempo de execução: $runtime (segundos) - Status: passed"
+    echo "Teste: $testname passou (duração: $runtime segundos)"
   fi
 done

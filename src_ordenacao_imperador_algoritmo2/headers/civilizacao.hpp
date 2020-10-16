@@ -6,16 +6,16 @@
 
 class Civilizacao
 {
-public:
-    Civilizacao();
-    Civilizacao(char n[MAX], int d, int p);
-    int GetDistancia();
-    int GetPopulacao();
-    void Imprime();
+    public:
+        Civilizacao();
+        Civilizacao(char n[MAX], int d, int p);
+        int GetDist();
+        int GetPop();
+        void Mostra();
 
-private:
-    int distancia;
-    int populacao;
-    char nome[MAX];
+    private:
+        int dist;
+        int pop;
+        char nome[MAX];
 };
 #endif

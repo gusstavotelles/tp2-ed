@@ -7,7 +7,7 @@ TMPOUT=./tp2.testresult
 $(EXEC): main.cpp civilizacao.o
 	$(CC) $(CFLAGS) main.cpp civilizacao.o -o $(EXEC)
 
-civilizacao.o: ./headers/civilizacao.hpp ./civilizacao.cpp ./QuickSort.cpp
+civilizacao.o: ./headers/civilizacao.hpp ./civilizacao.cpp ./quickSort.cpp
 	$(CC) $(CFLAGS) -c ./civilizacao.cpp -o civilizacao.o
  
 test: $(EXEC)

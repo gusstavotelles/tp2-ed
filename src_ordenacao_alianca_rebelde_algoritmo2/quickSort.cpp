@@ -2,44 +2,44 @@
 #include <vector>
 #include <iostream>
 
-void Particao(int Esq, int Dir, int *i, int *j, std::vector<Civilizacao> *civilizacoes)
+void Particao(int Esq, int Dir, int *i, int *j, std::vector<Civilizacao> *civ)
 {
     Civilizacao x, w;
     *i = Esq;
     *j = Dir;
 
-    x = civilizacoes->at((*i + *j) / 2);
+    x = civ->at((*i + *j) / 2);
     do
     {
-        while (x.GetDistancia() > civilizacoes->at(*i).GetDistancia() || (x.GetDistancia() == civilizacoes->at(*i).GetDistancia() && (x.GetPopulacao() < civilizacoes->at(*i).GetPopulacao())))
+        while (x.GetDist() > civ->at(*i).GetDist() || (x.GetDist() == civ->at(*i).GetDist() && (x.GetPop() < civ->at(*i).GetPop())))
         {
             (*i)++;
         }
-        while (x.GetDistancia() < civilizacoes->at(*j).GetDistancia() || (x.GetDistancia() == civilizacoes->at(*j).GetDistancia() && x.GetPopulacao() > civilizacoes->at(*j).GetPopulacao()))
+        while (x.GetDist() < civ->at(*j).GetDist() || (x.GetDist() == civ->at(*j).GetDist() && x.GetPop() > civ->at(*j).GetPop()))
         {
             (*j)--;
         }
         if (*i <= *j)
         {
-            w = civilizacoes->at(*i);
-            civilizacoes->at(*i) = civilizacoes->at(*j);
-            civilizacoes->at(*j) = w;
+            w = civ->at(*i);
+            civ->at(*i) = civ->at(*j);
+            civ->at(*j) = w;
             (*i)++;
             (*j)--;
         }
     } while (*i <= *j);
 }
 
-void Ordena(int Esq, int Dir, std::vector<Civilizacao> *civilizacoes)
+void Ordena(int Esq, int Dir, std::vector<Civilizacao> *civ)
 {
     int i, j;
-    Particao(Esq, Dir, &i, &j, civilizacoes);
+    Particao(Esq, Dir, &i, &j, civ);
     if (Esq < j)
-        Ordena(Esq, j, civilizacoes);
+        Ordena(Esq, j, civ);
     if (i < Dir)
-        Ordena(i, Dir, civilizacoes);
+        Ordena(i, Dir, civ);
 }
-void QuickSort(std::vector<Civilizacao> *civilizacoes, int n)
+void QuickSort(std::vector<Civilizacao> *civ, int n)
 {
-    Ordena(0, n - 1, civilizacoes);
+    Ordena(0, n - 1, civ);
 }
