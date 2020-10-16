@@ -1,12 +1,14 @@
-#include "headers/civilizacao.hpp"
+
 #include <vector>
 #include <iostream>
 
-void Particao(int Esq, int Dir, int *i, int *j, std::vector<Civilizacao> *civ)
+#include "headers/civilizacao.hpp"
+
+void Particao(int esq, int dir, int *i, int *j, std::vector<Civilizacao> *civ)
 {
     Civilizacao x, w;
-    *i = Esq;
-    *j = Dir;
+    *i = esq;
+    *j = dir;
 
     x = civ->at((*i + *j) / 2);
     do
@@ -30,14 +32,14 @@ void Particao(int Esq, int Dir, int *i, int *j, std::vector<Civilizacao> *civ)
     } while (*i <= *j);
 }
 
-void Ordena(int Esq, int Dir, std::vector<Civilizacao> *civ)
+void Ordena(int esq, int dir, std::vector<Civilizacao> *civ)
 {
     int i, j;
-    Particao(Esq, Dir, &i, &j, civ);
-    if (Esq < j)
-        Ordena(Esq, j, civ);
-    if (i < Dir)
-        Ordena(i, Dir, civ);
+    Particao(esq, dir, &i, &j, civ);
+    if (esq < j)
+        Ordena(esq, j, civ);
+    if (i < dir)
+        Ordena(i, dir, civ);
 }
 void QuickSort(std::vector<Civilizacao> *civ, int n)
 {

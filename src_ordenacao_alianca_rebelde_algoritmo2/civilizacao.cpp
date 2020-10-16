@@ -24,5 +24,5 @@ int Civilizacao::GetDist()
 
 void Civilizacao::Mostra()
 {
-    std::cout << this->nome << " " << this->dist << " " << this->pop << "\n";
+    std::cout << "Nome: " << this->nome << ", Distancia: " << this->dist << ", Populacao: " << this->pop << "\n";
 }

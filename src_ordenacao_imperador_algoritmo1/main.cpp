@@ -1,8 +1,10 @@
-#include <cstdio> // em C substituir por #include <stdio.h>
+#include <cstdio> 
 #include <iostream>
 #include <vector>
+// arquivos
 #include "headers/civilizacao.hpp"
-#include "Bolha.cpp"
+#include "bolha.cpp"
+
 using namespace std;
 #define MAX 20
 
@@ -10,11 +12,9 @@ int main()
 {
     int qtdCiv;
     scanf("%d", &qtdCiv);
-    int i, j;
-
     vector<Civilizacao> *civ = new vector<Civilizacao>;
 
-    for (i = 0; i < qtdCiv; i++)
+    for (int i = 0; i < qtdCiv; i++)
     {
         char nome[MAX] = {};
         int dist, pop;
@@ -24,10 +24,9 @@ int main()
 
     Bolha(civ, qtdCiv);
 
-    for (j = 0; j < qtdCiv; j++)
+    for (int j = 0; j < qtdCiv; j++)
     {
         civ->at(j).Mostra();
     }
-
     return 0;
 }

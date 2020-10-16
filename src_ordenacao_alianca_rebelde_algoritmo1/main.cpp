@@ -1,8 +1,10 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
+// arquivos
 #include "headers/civilizacao.hpp"
 #include "mergeSort.cpp"
+
 using namespace std;
 #define MAX 20
 
@@ -10,7 +12,6 @@ int main()
 {
     int qtdCiv;
     scanf("%d", &qtdCiv);
-
     vector<Civilizacao> *civ = new vector<Civilizacao>;
 
     for (int i = 0; i < qtdCiv; i++)
@@ -28,6 +29,5 @@ int main()
     {
         civ->at(j).Mostra();
     }
-
     return 0;
 }
